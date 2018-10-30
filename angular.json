@@ -121,6 +121,41 @@
           }
         }
       }
+    },
+    "xionic-swipe-tab": {
+      "root": "projects/xionic-swipe-tab",
+      "sourceRoot": "projects/xionic-swipe-tab/src",
+      "projectType": "library",
+      "prefix": "xionic",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/xionic-swipe-tab/tsconfig.lib.json",
+            "project": "projects/xionic-swipe-tab/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/xionic-swipe-tab/src/test.ts",
+            "tsConfig": "projects/xionic-swipe-tab/tsconfig.spec.json",
+            "karmaConfig": "projects/xionic-swipe-tab/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/xionic-swipe-tab/tsconfig.lib.json",
+              "projects/xionic-swipe-tab/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "xionic-swipe-tab-app"
